@@ -16,10 +16,10 @@ const Header = () => {
   const { loading, mobileMenu, setMobileMenu } = useContext(Context);
 
   const searchQueryHandler = (event: KeyboardEvent<HTMLInputElement> | "searchButton") => {
-    if((event instanceof KeyboardEvent && event.key === "Enter")|| event === "searchButton"){
+    if(event === "searchButton" || event?.key === "Enter"){
       if(searchQuery.length > 0){
 
-        navigate(`searchResult/${searchQuery}`);
+        navigate(`/searchResult/${searchQuery}`);
       }
     }
   }

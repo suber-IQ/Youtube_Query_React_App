@@ -3,7 +3,7 @@ import VideoLength from "../shared/VideoLength";
 import {abbreviateNumber} from 'js-abbreviation-number'
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
-interface VideoCardProps{
+ interface VideoCardProps{
       video: {
             videoId: string;
             thumbnails: {
@@ -62,7 +62,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
                         </span>
                         <div className="flex text-[12px] font-semibold text-white/[0.7] truncate overflow-hidden">
                             <span>
-                               {`${abbreviateNumber(video?.stats?.views, 2)} views`}
+                               {`${abbreviateNumber(video?.stats?.views || 0, 2)} views`}
                             </span>
                             <span
                             className="flex text-[24px] leading-none font-bold text-white/[0.7] relative top-[-10px] mx-1"
